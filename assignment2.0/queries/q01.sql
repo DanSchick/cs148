@@ -1,1 +1,0 @@
-SELECT pkmNetId FROM tblTeachers;
