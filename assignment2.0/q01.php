@@ -1,6 +1,7 @@
 <?php include('top.php');
 
 //now print out each record
+    print '<p>Displaying Query....<br>SELECT pmkNetId FROM tblTeachers;</p>';
     $query = 'SELECT pmkNetId FROM tblTeachers';
     $info2 = $thisDatabaseReader->select($query, "", 0, 0);
 

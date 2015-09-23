@@ -10,5 +10,15 @@ require_once('lib/custom-functions.php');
 <br>
 <p>You can click on these to execute a bunch of fun queries!</p>
 <a href="q01.php">q01</a>
+<a href="q02.php">q02</a>
+<a href="q03.php">q03</a>
+<a href="q04.php">q04</a>
+<a href="q05.php">q05</a>
+<a href="q06.php">q06</a>
+<a href="q07.php">q07</a>
+<a href="q08.php">q08</a>
+<a href="q09.php">q09</a>
+<a href="q10.php">q10</a>
+
 </body>
 </html>

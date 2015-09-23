@@ -14,4 +14,9 @@ q07
 SELECT COUNT(DISTINCT fldDepartment) FROM tblCourses;
 q08
 SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding;
+q09
+SELECT fldBuilding, fldNumStudents FROM tblSections WHERE fldDays LIKE '%W%' GROUP BY fldBuilding;
+q10
+SELECT fldBuilding, fldNumStudents FROM tblSections WHERE fldDays LIKE '%W%' GROUP BY fldBuilding;
+
 

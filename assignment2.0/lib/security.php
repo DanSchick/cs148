@@ -19,6 +19,15 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     // add all your page names to this array
     $whiteListPages = array();
     $whiteListPages[] = "q01.php";
+    $whiteListPages[] = "q02.php";
+    $whiteListPages[] = "q03.php";
+    $whiteListPages[] = "q04.php";
+    $whiteListPages[] = "q05.php";
+    $whiteListPages[] = "q06.php";
+    $whiteListPages[] = "q07.php";
+    $whiteListPages[] = "q08.php";
+    $whiteListPages[] = "q09.php";
+    $whiteListPages[] = "q10.php";
     $whiteListPages[] = "security.php";
     $whiteListPages[] = "select.php";
     $whiteListPages[] = "tables.php";

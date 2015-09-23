@@ -3,9 +3,9 @@
 //##############################################################################
 //
 // This page lists your tables and fields within your database. if you click on
-// a database name it will show you all the records for that table. 
-// 
-// 
+// a database name it will show you all the records for that table.
+//
+//
 // This file is only for class purposes and should never be publicly live
 //##############################################################################
 include "top.php";
