@@ -4,13 +4,13 @@
 
 //now print out each record
     print '<p>Displaying Query.....<br>SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding;</p>';
-    $query = 'SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding;';
+    $query = 'SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding';
     $info2 = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
     $test = $thisDatabaseReader->testquery($query, "", 0, 0, 0, 0, false, false);
 
 
     $highlight = 1; // used to highlight alternate rows
-    $columns = 1;
+    $columns = 2;
     print '<table>';
     foreach ($info2 as $rec) {
         $highlight++;
