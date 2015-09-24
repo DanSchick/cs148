@@ -10,7 +10,7 @@
 
 
     $highlight = 1; // used to highlight alternate rows
-    $columns = 1;
+    $columns = 2;
     print '<table>';
     foreach ($info2 as $rec) {
         $highlight++;
