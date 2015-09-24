@@ -4,7 +4,7 @@
 
 //now print out each record
     print '<p>Displaying Query.....<br>SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding;</p>';
-    $query = 'SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding;';
+    $query = 'SELECT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding';
     $info2 = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
     $test = $thisDatabaseReader->testquery($query, "", 0, 0, 0, 0, false, false);
 
