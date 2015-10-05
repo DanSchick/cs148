@@ -4,13 +4,14 @@
 
 //now print out each record
     print '<p>Displaying Query.....<br>SELECT fldCourseNumber, fldCourseName, fldDepartment, fldCredits FROM tblCourses WHERE pmkCourseId=392</p>';
-    $query = 'SELECT fldCourseNumber, fldCourseName, fldDepartment, fldCredits FROM tblCourses WHERE pmkCourseId=?';
-    $data = array("392");
+    $query = 'SELECT tblSections.fldCRN, fldFirstName, fldLastName FROM tblStudents INNER JOIN tblEnrolls ON tblEnrolls.fnkStudentId = tblStudents.pmkStudentId INNER JOIN tblSections ON tblEnrolls.fnkCourseId = tblSections.fnkCourseId WHERE tblSections.fnkCourseId = ? GROUP BY fldLastName DESC';
+    $data = array(392);
     $info2 = $thisDatabaseReader->select($query, $data, 1, 0, 0, 0, false, false);
+    $test = $thisDatabaseReader->testquery($query, $data, 1, 0, 0, 0, false, false);
 
 
     $highlight = 1; // used to highlight alternate rows
-    $columns = 4;
+    $columns = 3;
     print '<table>';
     foreach ($info2 as $rec) {
         $highlight++;
