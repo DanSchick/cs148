@@ -21,6 +21,12 @@
 	} else {
 	    print ' <li><a href="select.php">Select</a></li>';
 	}
+	
+	if ($path_parts['filename'] == "join") {
+		print '<li class="activePage">Join</li>';
+	} else {
+		print '<li><a href="join.php">Join</a></li>';
+	}
 
         ?>
     </ol>
