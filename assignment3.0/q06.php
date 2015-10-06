@@ -3,14 +3,14 @@
 
 
 //now print out each record
-    print '<p>Displaying Query.....<br>SELECT fldCourseName FROM tblCourses WHERE fldCourseName LIKE "%data%" AND fldDepartment!="CS";</p>';
-    $query = 'SELECT fldCourseName FROM tblCourses WHERE fldCourseName LIKE ? AND fldDepartment!=?';
-    $data = array("%data%","CS");
-    $info2 = $thisDatabaseReader->select($query, $data, 1, 2, 0, 0, false, false);
+    print '<p>Displaying Query.....<br>SELECT fldFirstName, CONCAT(fldPhone, "  ", fldSalary) FROM tblTeachers WHERE fldSalary<(SELECT AVG(fldSalary) FROM tblTeachers);</p>';
+    $query = 'SELECT fldFirstName, CONCAT(fldPhone, "  ", fldSalary) FROM tblTeachers WHERE fldSalary<(SELECT AVG(fldSalary) FROM tblTeachers)';
+    $info2 = $thisDatabaseReader->select($query, $data, 1, 0, 2, 1, false, false);
+    print '<p><br><br><br>SCROLL DOWN</p>';
 
 
     $highlight = 1; // used to highlight alternate rows
-    $columns = 1;
+    $columns = 2;
     print '<table>';
     foreach ($info2 as $rec) {
         $highlight++;

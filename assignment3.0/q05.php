@@ -3,10 +3,17 @@
 
 
 //now print out each record
-    print '<p>Displaying Query.....<br>SELECT fldFirstName, fldLastName FROM tblTeachers WHERE pmkNetId LIKE "r%o";</p>';
-    $query = 'SELECT fldFirstName, fldLastName FROM tblTeachers WHERE pmkNetId LIKE ?';
-    $data = array("r%o");
-    $info2 = $thisDatabaseReader->select($query, $data, 1, 0, 0, 0, false, false);
+    print '<p>Displaying Query.....<br>SELECT fldFirstName, fldLastName, COUNT(DISTINCT tblEnrolls.fnkStudentId) as total FROM tblTeachers
+INNER JOIN tblSections ON tblSections.fnkTeacherNetId = tblTeachers.pmkNetId
+INNER JOIN tblEnrolls ON tblEnrolls.fnkCourseId = tblSections.fnkCourseId
+GROUP BY fldLastName ORDER BY total DESC;</p>';
+    $query = 'SELECT fldFirstName, fldLastName, COUNT(DISTINCT tblEnrolls.fnkStudentId) as total FROM tblTeachers
+INNER JOIN tblSections ON tblSections.fnkTeacherNetId = tblTeachers.pmkNetId
+INNER JOIN tblEnrolls ON tblEnrolls.fnkCourseId = tblSections.fnkCourseId
+GROUP BY fldLastName ORDER BY total DESC';
+
+    print '<p><br><br><br><br> SCROLL DOWN</p>';
+    $info2 = $thisDatabaseReader->select($query, $data, 0, 1, 0, 0, false, false);
 
 
     $highlight = 1; // used to highlight alternate rows
